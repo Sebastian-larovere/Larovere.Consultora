@@ -1,0 +1,382 @@
+/* Importamos Plus Jakarta Sans: Una tipografía corporativa, moderna y muy limpia */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-principal: #f8fafc;       /* Gris Slate ultra claro (amplitud y claridad) */
+    --texto-principal: #0f172a;   /* Azul Slate profundo (inteligencia y seriedad) */
+    --texto-secundario: #475569;  /* Gris medio para descripciones */
+    --color-acento: #0284c7;      /* Azul analítico (representa visión de mercado) */
+    --fondo-tarjeta: #ffffff;     /* Blanco puro para destacar los bloques */
+    --borde-tarjeta: #e2e8f0;     /* Líneas divisorias muy finas y sutiles */
+    --borde-redondo: 12px;        /* Esquinas suavizadas de estilo moderno */
+    --sombra-premium: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Contenedor de la presentación */
+main {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    color: var(--texto-principal);
+}
+
+.subtitulo {
+    font-size: 1.15rem;
+    color: var(--texto-secundario);
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+}
+
+/* Cuadrícula inteligente y responsiva (se adapta sola a celulares) */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* Diseño de los 4 cuadrados */
+.tarjeta-servicio {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: var(--borde-redondo);
+    padding: 40px 25px;
+    box-shadow: var(--sombra-premium);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto interactivo premium al pasar el mouse (Hover) */
+.tarjeta-servicio:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-acento);
+    box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.1);
+}
+
+/* Rectangular container for images — larger and more visible */
+.icono-contenedor {
+    width: 160px;
+    height: 110px;
+    background-color: rgba(2, 132, 199, 0.04);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.icono-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+/* Pie de página limpio para LinkedIn */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background-color: var(--fondo-tarjeta);
+    border-top: 1px solid var(--borde-tarjeta);
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.tab-button {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--texto-secundario);
+    transition: all 0.18s ease;
+}
+
+.tab-button:hover {
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: var(--color-acento);
+    color: white;
+    border-color: rgba(2,132,199,0.15);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.portada-contenedor {
+    max-width: 900px;
+    margin: 24px auto 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--sombra-premium);
+}
+
+.portada-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Blue section container */
+.blue-section {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    border-radius: var(--borde-redondo);
+    padding: 40px 30px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+}
+
+.blue-section .subtitulo {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+}
+
+.blue-section .descripcion {
+    color: #e0e7ff;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.showcase-section {
+    margin: 40px 0;
+    text-align: left;
+}
+
+.showcase-highlight {
+    background-color: #facc15;
+    border-radius: var(--borde-redondo);
+    padding: 28px 26px;
+    box-shadow: var(--sombra-premium);
+    color: #0f172a;
+}
+
+.showcase-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.showcase-copy {
+    max-width: 720px;
+    line-height: 1.7;
+    color: #334155;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.showcase-card {
+    background-color: #fef3c7;
+    border: 1px solid rgba(250, 204, 21, 0.35);
+    border-radius: var(--borde-redondo);
+    padding: 22px 18px;
+    color: var(--texto-principal);
+    font-weight: 700;
+    box-shadow: 0 8px 18px -10px rgba(15, 23, 42, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.showcase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px -12px rgba(15, 23, 42, 0.15);
+}
+
+/* Contact section styling */
+.contact-content {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-form-card,
+.contact-info-card {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: var(--borde-redondo);
+    padding: 28px;
+    box-shadow: var(--sombra-premium);
+    width: 100%;
+    max-width: 520px;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 22px;
+    font-size: 1rem;
+    color: var(--texto-secundario);
+}
+
+.email-icon {
+    font-size: 1.5rem;
+}
+
+.contact-email a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 18px;
+    color: var(--texto-secundario);
+}
+
+.contact-form label span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: 14px;
+    background: #ffffff;
+    color: var(--texto-principal);
+    font: inherit;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.08);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.btn {
+    border: none;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-button {
+    margin: 26px 0 16px;
+}
+
+.btn-primary {
+    background: var(--color-acento);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: var(--texto-principal);
+    border: 1px solid var(--borde-tarjeta);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-info-header {
+    margin-bottom: 20px;
+    color: var(--texto-secundario);
+    font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Dashboard styling */
+.dashboard-container {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    border-radius: var(--borde-redondo);
+    padding: 20px;
+    box-shadow: var(--sombra-premium);
+    margin-top: 24px;
+    overflow: hidden;
+}
+
+.dashboard-container iframe {
+    border-radius: 8px;
+}
