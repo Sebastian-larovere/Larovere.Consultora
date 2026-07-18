@@ -16,8 +16,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const themeToggle = document.querySelector('.theme-toggle');
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
+
+    const themeLabels = {
+        dark: 'Activar modo claro',
+        light: 'Activar modo oscuro'
+    };
+
+    function updateThemeButton(theme) {
+        if (!themeToggle) return;
+        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        themeToggle.setAttribute('aria-label', theme === 'dark' ? themeLabels.dark : themeLabels.light);
+        themeToggle.title = theme === 'dark' ? themeLabels.dark : themeLabels.light;
+    }
+
+    function applyTheme(theme) {
+        document.body.classList.toggle('dark', theme === 'dark');
+        updateThemeButton(theme);
+    }
+
+    function loadTheme() {
+        const storedTheme = localStorage.getItem('site-theme');
+        if (storedTheme) {
+            return storedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function saveTheme(theme) {
+        localStorage.setItem('site-theme', theme);
+    }
+
+    if (themeToggle) {
+        const currentTheme = loadTheme();
+        applyTheme(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            saveTheme(nextTheme);
+        });
+    }
 
     if (form && status) {
         form.addEventListener('submit', async (event) => {
