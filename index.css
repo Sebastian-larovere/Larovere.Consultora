@@ -122,6 +122,25 @@ body.dark .menu-toggle {
     text-align: center;
 }
 
+.hero-content {
+    max-width: 860px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.hero-visual {
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo {
+    width: min(100%, 260px);
+    max-width: 260px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 25px rgba(15, 23, 42, 0.12));
+}
 .eyebrow {
     display: inline-block;
     margin-bottom: 12px;
@@ -392,5 +411,10 @@ main {
 
     .section-alt {
         padding: 48px 16px;
+    }
+}
+@media (max-width: 700px) {
+    .hero-logo {
+        max-width: 190px;
     }
 }
