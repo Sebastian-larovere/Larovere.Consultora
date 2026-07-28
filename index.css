@@ -58,17 +58,28 @@ body.dark .hero {
 
 .nav {
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 14px;
-    padding: 12px 0 24px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+body.dark .nav {
+    background: rgba(17, 24, 39, 0.9);
+    border-color: rgba(36, 50, 74, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 .brand {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 0.02em;
 }
 
