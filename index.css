@@ -289,6 +289,57 @@ main {
     color: var(--muted);
 }
 
+.dashboard-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.dashboard-preview iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+}
+
+.dashboard-preview-link {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(180deg, transparent 55%, rgba(15, 23, 42, 0.72) 100%);
+    color: white;
+    font-weight: 700;
+}
+
+.dashboard-preview-link span {
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(8px);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dashboard-preview-link:hover span,
+.dashboard-preview-link:focus-visible span {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.dashboard-preview-link:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+}
+
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,6 +465,10 @@ main {
     .contact-grid,
     .about-box {
         grid-template-columns: 1fr;
+    }
+
+    .dashboard-preview {
+        aspect-ratio: 4 / 3;
     }
 
     main {
